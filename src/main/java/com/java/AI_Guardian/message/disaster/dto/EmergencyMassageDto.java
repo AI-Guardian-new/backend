@@ -71,7 +71,7 @@ public class EmergencyMassageDto {
             private String trsnPltfId;
 
             @JsonProperty("MSTN_BRNE_CN")
-            private String mstnBrneCn;
+            private String mstnBrneCn;//메세지
 
             @JsonProperty("MSTN_BRNE_NO")
             private String mstnBrneNo;
@@ -90,7 +90,16 @@ public class EmergencyMassageDto {
 
             @JsonProperty("MSTN_ID")
             private String mstnId;
-        }
 
+            private String emoji;
+
+            public void setEmoji(String emoji) {
+                if (emoji == null || emoji.isEmpty()) {
+                    this.emoji = emoji;
+                    return;
+                }
+                this.emoji += emoji;
+            }
+        }
     }
 }
